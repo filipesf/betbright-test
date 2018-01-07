@@ -1,0 +1,313 @@
+/* ==========================================================================
+   GLOBAL STYLES
+   ========================================================================== */
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+
+html, body { min-height: 100vh; }
+
+body {
+  display: grid;
+  grid-template-columns: minmax(auto, 680px);
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-content: center;
+  padding: 24px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f7f7f7;
+  overflow-y: scroll;
+}
+
+
+
+/* ==========================================================================
+   CARD
+   ========================================================================== */
+.c-card {
+  position: relative;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  max-width: 680px;
+}
+
+.c-card.is-active {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+
+
+/* CARD: SIDES
+   ========================================================================== */
+.c-card__front,
+.c-card__back {
+  display: grid;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  background-color: white;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.c-card__front {
+  grid-template-columns: 255px auto;
+  -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+
+.c-card__back {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+
+
+/* CARD: IMAGE
+   ========================================================================== */
+.c-card__image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
+/* CARD: CONTAINER
+   ========================================================================== */
+.c-card__container {
+  padding: 18px 12px;
+}
+
+
+
+/* CARD: BADGE
+   ========================================================================== */
+.c-card__badge {
+  position: absolute;
+  right: -40px;
+  top: 15px;
+  width: 160px;
+  padding: 4px;
+  font-size: 24px;
+  font-weight: 800;
+  text-align: center;
+  -webkit-transform: rotate(40deg);
+  transform: rotate(40deg);
+  background-color: #ffcc00;
+  -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* CARD: BODY
+   ========================================================================== */
+.c-card__body {
+  margin-top: 20px;
+  margin-bottom: 16px;
+}
+
+
+
+/* CARD: HEADING
+   ========================================================================== */
+.c-card__title,
+.c-card__subtitle {
+  text-transform: uppercase;
+}
+
+.c-card__title {
+  color: #3b84a1;
+}
+
+
+
+/* CARD: TEXT
+   ========================================================================== */
+.c-card__text {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.c-card__text + .c-card__subtitle {
+  margin-top: 6px;
+}
+
+
+
+/* CARD: FOOTER
+   ========================================================================== */
+.c-card__footer {
+  display: grid;
+  grid-gap: 6px;
+  grid-template-columns: repeat(3, minmax(auto, 130px));
+}
+
+
+
+
+
+/* ==========================================================================
+   PRICING
+   ========================================================================== */
+.c-pricing {
+  display: block;
+  font-size: 1.5em;
+}
+
+
+
+
+
+/* ==========================================================================
+   BUTTON
+   ========================================================================== */
+.c-btn {
+  display: inline-block;
+  padding: 6px;
+  font-size: 12px;
+  font-weight: 300;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  white-space: nowrap;
+  background-color: #e6e7e9;
+  color: black;
+}
+
+.c-btn:hover {
+  background-color: #d4d5d9;
+}
+
+.c-btn--primary {
+  background-color: #ffcc00;
+}
+
+.c-btn--primary:hover {
+  background-color: #f2c602;
+}
+
+
+
+
+
+/* ==========================================================================
+   TERMS & CONDITION
+   ========================================================================== */
+.c-terms-condition {
+  position: relative;
+  padding: 12px;
+  height: 115px;
+  overflow-y: scroll;
+}
+
+/**
+ * .c-terms-condition:before {
+ *   background-image: linear-gradient(to bottom, rgba(255,255,255,0) 70%, rgba(255,255,255,1) 100%);
+ *   background-image: -moz-linear-gradient(top, rgba(255,255,255,0) 70%, rgba(255,255,255,1) 100%),
+ *   background-image: -webkit-linear-gradient(top, rgba(255,255,255,0) 70%, rgba(255,255,255,1) 100%);
+ *   content: '';
+ *   position: absolute;
+ *   bottom: 0;
+ *   left: 0;
+ *   height: 100%;
+ *   width: 100%;
+ *   z-index: 1;
+ * }
+ */
+
+.c-terms-condition p:first-of-type {
+  margin-top: 10px;
+}
+
+.c-terms-condition p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+
+
+
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+@media screen and (max-width: 600px) {
+  .c-card__front {
+    grid-template-columns: auto;
+    grid-template-rows: 225px auto;
+    width: 100%;
+  }
+
+  .c-card__back .c-card__footer{
+    grid-template-columns: auto;
+  }
+
+  .c-card__footer {
+    grid-template-columns: repeat(2, minmax(120px, auto));
+  }
+
+  .c-card__footer > :last-child {
+    grid-column: 1 / -1;
+    -webkit-box-ordinal-group: 0;
+    -ms-flex-order: -1;
+    order: -1;
+  }
+
+  .c-terms-condition {
+    min-height: 300px;
+  }
+}
+
+
+
+
+
+/* ==========================================================================
+   FLIP ICON
+   ========================================================================== */
+.i-flip {
+  position: relative;
+}
+
+.i-flip:before,
+.i-flip:before {
+  content: "\f021";
+  position: absolute;
+  left: 12px;
+  top: 8px;
+  font-family: FontAwesome;
+  transition: all ease .3s;
+  opacity: 0;
+}
+
+.i-flip:hover:before {
+  transform: rotate(180deg);
+  opacity: 1;
+}

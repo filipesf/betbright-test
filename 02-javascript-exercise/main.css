@@ -1,0 +1,112 @@
+/* ==========================================================================
+   GLOBAL STYLES
+   ========================================================================== */
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+
+/*html,
+body {
+  min-height: 100vh;
+}*/
+
+
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f7f7f7;
+  overflow-y: scroll;
+}
+
+
+
+
+
+/* ==========================================================================
+   NAVIGATION
+   ========================================================================== */
+.c-nav {
+  display: grid;
+  grid-gap: 24px;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 24px;
+  list-style: none;
+}
+
+
+
+.c-nav__item {
+  text-align: center;
+}
+
+
+
+.c-nav__link {
+  display: block;
+  padding: 24px;
+  font-weight: 900;
+  text-decoration: none;
+  transition: all ease .3s;
+  background-color: gray;
+  color: white;
+  opacity: .8;
+}
+.c-nav__link[id="cow"] {
+  background-color: #dd5a6f; color: #ffffff;
+}
+.c-nav__link[id="dog"] {
+  background-color: #5c4863; color: #ffc93c;
+}
+.c-nav__link[id="gir"] {
+  background-color: #ffc93c; color: #5c4863;
+}
+.c-nav__link:hover {
+  opacity: 1;
+}
+
+
+
+
+
+/* ==========================================================================
+   GALLERY
+   ========================================================================== */
+.l-gallery {
+  display: grid;
+  grid-gap: 24px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 220px;
+  margin: 24px;
+}
+
+@media screen and (max-width: 835px) {
+  .l-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .l-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+.l-gallery > figure {
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
