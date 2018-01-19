@@ -26,3 +26,4 @@ window.addEventListener('resize', () =>
     ? card.style.height = `${cardF.offsetHeight}px`
     : card.style.height = initCardHeight
 )
+

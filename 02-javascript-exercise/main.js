@@ -99,3 +99,4 @@ function loadGallery(event) {
  * Listeners
  */
 navButtons.addEventListener('click', loadGallery);
+
